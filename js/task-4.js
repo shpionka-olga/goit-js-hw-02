@@ -1,23 +1,37 @@
 'use strict';
 function getShippingCost(country) {
-    const mapContryCost = new Map();
-
-    mapContryCost.set('China', 100);
-    mapContryCost.set('Chile', 250);
-    mapContryCost.set('Australia', 170);
-    mapContryCost.set('Jamaica', 120);
-
-    const iteratorContryCost = mapContryCost.keys();
-
+    let priceCredits;
     switch (country) {
-        case iteratorContryCost.next().value:
-        case iteratorContryCost.next().value:
-        case iteratorContryCost.next().value:
-        case iteratorContryCost.next().value:
-            return `Shipping to ${country} will cost ${mapContryCost.get(country)} credits`;
+        case 'China':
+            priceCredits = 100;
+            break;
+        case 'Chile':
+            priceCredits = 250;
+            break;
+        case 'Australia':
+            priceCredits = 170;
+            break;
+        case 'Jamaica':
+            priceCredits = 120;
+            break;
         default:
             return `Sorry, there is no delivery to your country`;
     }
+    return `Shipping to ${country} will cost ${priceCredits} credits`;
+
+
+    // const mapContryCost = new Map([
+    //     ['China', 100],
+    //     ['Chile', 250],
+    //     ['Australia', 170],
+    //     ['Jamaica', 120]
+    // ]);
+    // for (let [key, value] of mapContryCost.entries()) {
+    //     if (key === country) {
+    //         return `Shipping to ${country} will cost ${value} credits`;
+    //     }
+    // }
+    // return `Sorry, there is no delivery to your country`;
 
 }
 
